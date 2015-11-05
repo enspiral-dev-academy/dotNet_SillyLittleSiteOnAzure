@@ -66,6 +66,15 @@ We are going to take the personalisations made before and publish them.
  - git push origin
  - Go to the url of your page hosted on azure
   - Keep refreshing the page after a few seconds your changes should have been deployed and the site updated
+  - 
+  
+##Add DataBase on Azure
+
+
+##Add OAuth access
+
+
+##Add an Authorised access page
  
 
 
