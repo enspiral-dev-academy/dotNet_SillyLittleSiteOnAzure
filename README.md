@@ -70,8 +70,24 @@ We are going to take the personalisations made before and publish them.
   
 ##Add DataBase on Azure
 
+Now a website is all fine and dandy. However we want to put some stuff in a database to make things a little bit more interesting. Out of the box .net MVC uses something called LocalDB. This is all good for development; but is no good when we are running on Azure. LocalDB is not designed for concurrent access (lots of users at one time), also once a site is deployed to Azure you only have read access to the file system. (There are good technical reasons for this.) So we need to setup a database on Azure and then fixup the config to point to that db when deployed
+
+
+ - Follow this guide to setup a db on azure [https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started](https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started/)
+ - Once the database is setup grab the connectionsting <image>
+ - Find the Azure website you created before
+ - Go to the settings <image>
+ - Find the connections string settings 
+ - Add the connections string (you may need to replace the password part)
+ - Save
+
+Sweet you've got yourself a sweet database talking to your live site. Go you!
+You can now register as a user on the site and login.
+
+We have put the connection string setting for production (Azure) in the azure settings. We want to do it this way, rather than saving it in the config files (web.config, config.json), because we dont want our production db password saved into git where anyone (with access) to the code base can find it. This may sound a little paranoid but you will find it really is not.
 
 ##Add OAuth access
+
 
 
 ##Add an Authorised access page
